@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cmpay.gx.dao.IRoleDao" >
+
+    <resultMap id="BaseResultMap" type="com.cmpay.gx.entity.RoleDO" >
+        <result column="t_id" property="tId" jdbcType="BIGINT" />
+        <result column="t_name" property="tName" jdbcType="VARCHAR" />
+        <result column="t_remarks" property="tRemarks" jdbcType="VARCHAR" />
+        <result column="t_action" property="tAction" jdbcType="VARCHAR" />
+        <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+        <result column="create_date" property="createDate" jdbcType="DATE" />
+        <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+        <result column="update_date" property="updateDate" jdbcType="DATE" />
+        <result column="is_use" property="isUse" jdbcType="TINYINT" />
+    </resultMap>
+
+    <insert id="insert" parameterType="com.cmpay.gx.entity.RoleDO" >
+        insert into t_role
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="tId != null" >
+                t_id,
+            </if>
+            <if test="tName != null" >
+                t_name,
+            </if>
+            <if test="tRemarks != null" >
+                t_remarks,
+            </if>
+            <if test="tAction != null" >
+                t_action,
+            </if>
+            <if test="createBy != null" >
+                create_by,
+            </if>
+            <if test="createDate != null" >
+                create_date,
+            </if>
+            <if test="updateBy != null" >
+                update_by,
+            </if>
+            <if test="updateDate != null" >
+                update_date,
+            </if>
+            <if test="isUse != null" >
+                is_use,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="tId != null" >
+                #{tId,jdbcType=BIGINT},
+            </if>
+            <if test="tName != null" >
+                #{tName,jdbcType=VARCHAR},
+            </if>
+            <if test="tRemarks != null" >
+                #{tRemarks,jdbcType=VARCHAR},
+            </if>
+            <if test="tAction != null" >
+                #{tAction,jdbcType=VARCHAR},
+            </if>
+            <if test="createBy != null" >
+                #{createBy,jdbcType=VARCHAR},
+            </if>
+            <if test="createDate != null" >
+                #{createDate,jdbcType=DATE},
+            </if>
+            <if test="updateBy != null" >
+                #{updateBy,jdbcType=VARCHAR},
+            </if>
+            <if test="updateDate != null" >
+                #{updateDate,jdbcType=DATE},
+            </if>
+            <if test="isUse != null" >
+                #{isUse,jdbcType=TINYINT},
+            </if>
+        </trim>
+    </insert>
+
+    <select id="find" resultMap="BaseResultMap" parameterType="com.cmpay.gx.entity.RoleDO" >
+        select 
+        <include refid="Base_Column_List" />
+        from t_role
+        <where >
+            <if test="tId != null" >
+                and t_id = #{tId,jdbcType=BIGINT}
+            </if>
+            <if test="tName != null" >
+                and t_name = #{tName,jdbcType=VARCHAR}
+            </if>
+            <if test="tRemarks != null" >
+                and t_remarks = #{tRemarks,jdbcType=VARCHAR}
+            </if>
+            <if test="tAction != null" >
+                and t_action = #{tAction,jdbcType=VARCHAR}
+            </if>
+            <if test="createBy != null" >
+                and create_by = #{createBy,jdbcType=VARCHAR}
+            </if>
+            <if test="createDate != null" >
+                and create_date = #{createDate,jdbcType=DATE}
+            </if>
+            <if test="updateBy != null" >
+                and update_by = #{updateBy,jdbcType=VARCHAR}
+            </if>
+            <if test="updateDate != null" >
+                and update_date = #{updateDate,jdbcType=DATE}
+            </if>
+            <if test="isUse != null" >
+                and is_use = #{isUse,jdbcType=TINYINT}
+            </if>
+        </where>
+    </select>
+</mapper>

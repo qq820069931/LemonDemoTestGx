@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cmpay.gx.dao.IMenuDao" >
+
+    <resultMap id="BaseResultMap" type="com.cmpay.gx.entity.MenuDO" >
+        <result column="t_id" property="tId" jdbcType="BIGINT" />
+        <result column="t_type" property="tType" jdbcType="VARCHAR" />
+        <result column="t_superior" property="tSuperior" jdbcType="BIGINT" />
+        <result column="t_name" property="tName" jdbcType="VARCHAR" />
+        <result column="t_meta" property="tMeta" jdbcType="VARCHAR" />
+        <result column="t_component" property="tComponent" jdbcType="VARCHAR" />
+        <result column="t_url" property="tUrl" jdbcType="VARCHAR" />
+        <result column="t_ename" property="tEname" jdbcType="VARCHAR" />
+        <result column="t_identification" property="tIdentification" jdbcType="VARCHAR" />
+        <result column="create_by" property="createBy" jdbcType="VARCHAR" />
+        <result column="create_date" property="createDate" jdbcType="DATE" />
+        <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
+        <result column="update_date" property="updateDate" jdbcType="DATE" />
+        <result column="is_use" property="isUse" jdbcType="TINYINT" />
+    </resultMap>
+
+    <insert id="insert" parameterType="com.cmpay.gx.entity.MenuDO" >
+        insert into t_menu
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="tId != null" >
+                t_id,
+            </if>
+            <if test="tType != null" >
+                t_type,
+            </if>
+            <if test="tSuperior != null" >
+                t_superior,
+            </if>
+            <if test="tName != null" >
+                t_name,
+            </if>
+            <if test="tMeta != null" >
+                t_meta,
+            </if>
+            <if test="tComponent != null" >
+                t_component,
+            </if>
+            <if test="tUrl != null" >
+                t_url,
+            </if>
+            <if test="tEname != null" >
+                t_ename,
+            </if>
+            <if test="tIdentification != null" >
+                t_identification,
+            </if>
+            <if test="createBy != null" >
+                create_by,
+            </if>
+            <if test="createDate != null" >
+                create_date,
+            </if>
+            <if test="updateBy != null" >
+                update_by,
+            </if>
+            <if test="updateDate != null" >
+                update_date,
+            </if>
+            <if test="isUse != null" >
+                is_use,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="tId != null" >
+                #{tId,jdbcType=BIGINT},
+            </if>
+            <if test="tType != null" >
+                #{tType,jdbcType=VARCHAR},
+            </if>
+            <if test="tSuperior != null" >
+                #{tSuperior,jdbcType=BIGINT},
+            </if>
+            <if test="tName != null" >
+                #{tName,jdbcType=VARCHAR},
+            </if>
+            <if test="tMeta != null" >
+                #{tMeta,jdbcType=VARCHAR},
+            </if>
+            <if test="tComponent != null" >
+                #{tComponent,jdbcType=VARCHAR},
+            </if>
+            <if test="tUrl != null" >
+                #{tUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="tEname != null" >
+                #{tEname,jdbcType=VARCHAR},
+            </if>
+            <if test="tIdentification != null" >
+                #{tIdentification,jdbcType=VARCHAR},
+            </if>
+            <if test="createBy != null" >
+                #{createBy,jdbcType=VARCHAR},
+            </if>
+            <if test="createDate != null" >
+                #{createDate,jdbcType=DATE},
+            </if>
+            <if test="updateBy != null" >
+                #{updateBy,jdbcType=VARCHAR},
+            </if>
+            <if test="updateDate != null" >
+                #{updateDate,jdbcType=DATE},
+            </if>
+            <if test="isUse != null" >
+                #{isUse,jdbcType=TINYINT},
+            </if>
+        </trim>
+    </insert>
+
+    <select id="find" resultMap="BaseResultMap" parameterType="com.cmpay.gx.entity.MenuDO" >
+        select 
+        <include refid="Base_Column_List" />
+        from t_menu
+        <where >
+            <if test="tId != null" >
+                and t_id = #{tId,jdbcType=BIGINT}
+            </if>
+            <if test="tType != null" >
+                and t_type = #{tType,jdbcType=VARCHAR}
+            </if>
+            <if test="tSuperior != null" >
+                and t_superior = #{tSuperior,jdbcType=BIGINT}
+            </if>
+            <if test="tName != null" >
+                and t_name = #{tName,jdbcType=VARCHAR}
+            </if>
+            <if test="tMeta != null" >
+                and t_meta = #{tMeta,jdbcType=VARCHAR}
+            </if>
+            <if test="tComponent != null" >
+                and t_component = #{tComponent,jdbcType=VARCHAR}
+            </if>
+            <if test="tUrl != null" >
+                and t_url = #{tUrl,jdbcType=VARCHAR}
+            </if>
+            <if test="tEname != null" >
+                and t_ename = #{tEname,jdbcType=VARCHAR}
+            </if>
+            <if test="tIdentification != null" >
+                and t_identification = #{tIdentification,jdbcType=VARCHAR}
+            </if>
+            <if test="createBy != null" >
+                and create_by = #{createBy,jdbcType=VARCHAR}
+            </if>
+            <if test="createDate != null" >
+                and create_date = #{createDate,jdbcType=DATE}
+            </if>
+            <if test="updateBy != null" >
+                and update_by = #{updateBy,jdbcType=VARCHAR}
+            </if>
+            <if test="updateDate != null" >
+                and update_date = #{updateDate,jdbcType=DATE}
+            </if>
+            <if test="isUse != null" >
+                and is_use = #{isUse,jdbcType=TINYINT}
+            </if>
+        </where>
+    </select>
+</mapper>

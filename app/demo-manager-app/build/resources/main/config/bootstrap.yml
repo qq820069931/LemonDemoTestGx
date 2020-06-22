@@ -1,0 +1,27 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: buidemo
+lemon:
+  session:
+    sessionId:
+      cookie:
+        cookieName: token
+        domain: cmpay.com
+        maxAge: -1
+        cookiePath: /
+      strategy: Header
+      headerName: token
+  security:
+    principal:
+      principalNameExpression: username
+    #认证地址
+    authentication:
+      loginPathPrefix: /v1/bui/login              #默认 /security/login
+      refreshPath: /v1/bui/refresh                #默认 /security/refresh
+      logoutPath: /v1/bui/logout                  #默认 /security/logout
+    authorizeRequests:
+      #配置不进行认证检查的交易请求url
+      permitAll:
+        - /upms/v1/captcha/getCaptcha

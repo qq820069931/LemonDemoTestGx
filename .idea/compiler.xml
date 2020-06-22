@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="LemonDemoTestGx.app.LoginApp.main" target="1.8" />
+      <module name="LemonDemoTestGx.app.LoginApp.test" target="1.8" />
+      <module name="LemonDemoTestGx.app.MenuManagementApp.main" target="1.8" />
+      <module name="LemonDemoTestGx.app.MenuManagementApp.test" target="1.8" />
+      <module name="LemonDemoTestGx.app.RoleManagementApp.main" target="1.8" />
+      <module name="LemonDemoTestGx.app.RoleManagementApp.test" target="1.8" />
+      <module name="LemonDemoTestGx.app.UserManagementApp.main" target="1.8" />
+      <module name="LemonDemoTestGx.app.UserManagementApp.test" target="1.8" />
+      <module name="LemonDemoTestGx.LoginApp.main" target="1.8" />
+      <module name="LemonDemoTestGx.LoginApp.test" target="1.8" />
+      <module name="LemonDemoTestGx.main" target="1.8" />
+      <module name="LemonDemoTestGx.MenuManagementApp.main" target="1.8" />
+      <module name="LemonDemoTestGx.MenuManagementApp.test" target="1.8" />
+      <module name="LemonDemoTestGx.RoleManagementApp.main" target="1.8" />
+      <module name="LemonDemoTestGx.RoleManagementApp.test" target="1.8" />
+      <module name="LemonDemoTestGx.test" target="1.8" />
+      <module name="LemonDemoTestGx.UserManagementApp.main" target="1.8" />
+      <module name="LemonDemoTestGx.UserManagementApp.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
