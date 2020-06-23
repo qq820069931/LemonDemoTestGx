@@ -10,7 +10,9 @@ import com.cmpay.gx.entity.JurisdictionDO;
 import com.cmpay.gx.entity.JurisdictionDOKey;
 import com.cmpay.lemon.framework.dao.BaseDao;
 import org.apache.ibatis.annotations.Mapper;
-
+/**
+ * @author GX
+ */
 @Mapper
 public interface IJurisdictionDao extends BaseDao<JurisdictionDO, JurisdictionDOKey> {
 }

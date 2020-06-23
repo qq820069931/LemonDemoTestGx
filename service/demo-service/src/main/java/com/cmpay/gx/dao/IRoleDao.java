@@ -10,7 +10,9 @@ import com.cmpay.gx.entity.RoleDO;
 import com.cmpay.gx.entity.RoleDOKey;
 import com.cmpay.lemon.framework.dao.BaseDao;
 import org.apache.ibatis.annotations.Mapper;
-
+/**
+ * @author GX
+ */
 @Mapper
 public interface IRoleDao extends BaseDao<RoleDO, RoleDOKey> {
 }

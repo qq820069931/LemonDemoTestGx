@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration;
  * @author GX
  */
 
-@LemonBootApplication(exclude = {RabbitAutoConfiguration.class}, value = {"com.cmpay.gx"})
+@LemonBootApplication(exclude = {RabbitAutoConfiguration.class}, value = {"com.cmpay"})
 public class MangerApplication {
     public static void main(String[] args) {
         LemonFramework.run(MangerApplication.class, args);

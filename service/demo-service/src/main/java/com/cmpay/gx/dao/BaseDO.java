@@ -1,5 +1,8 @@
 package com.cmpay.gx.dao;
 
+
+
+
 import com.cmpay.lemon.framework.annotation.PreInsert;
 import com.cmpay.lemon.framework.annotation.PreUpdate;
 import com.cmpay.lemon.framework.data.DOBasicOperation;
@@ -9,7 +12,7 @@ import java.time.LocalDateTime;
 /**
  * 时间戳
  *
- * @author : Noone
+ * @author : gx
  */
 public class BaseDO implements DOBasicOperation {
 
@@ -33,5 +36,12 @@ public class BaseDO implements DOBasicOperation {
 
     public void setTmSmp(String tmSmp) {
         this.tmSmp = tmSmp;
+    }
+
+    @Override
+    public String toString() {
+        return "BaseDO{" +
+                "tmSmp='" + tmSmp + '\'' +
+                '}';
     }
 }

@@ -4,7 +4,6 @@ dependencies {
     compile("org.projectlombok:lombok")
 
 
-
 }
 jar {
     manifest {

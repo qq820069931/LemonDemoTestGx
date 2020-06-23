@@ -22,7 +22,7 @@ lemon:
     primary:
       type: com.alibaba.druid.pool.DruidDataSource
       driverClassName: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://192.168.42.111:3306/text?serverTimezone=Asia/Shanghai
+      url: jdbc:mysql://192.168.42.111:3306/test?serverTimezone=Asia/Shanghai
       username: root
       password: '123456'
   idgen:

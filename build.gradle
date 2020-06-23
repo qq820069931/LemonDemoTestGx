@@ -85,6 +85,8 @@ configure(subprojects.findAll { it.name.matches('\\S*(-interface|-constant|-comm
                     authentication(userName: appMavenUserRelease, password: appMavenPasswordRelease)
                 }
             }
+            maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+            maven{ url 'http://maven.aliyun.com/nexus/content/repositories/jcenter'}
         }
     }
 }

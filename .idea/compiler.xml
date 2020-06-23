@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
       <module name="LemonDemoTestGx.app.LoginApp.main" target="1.8" />
       <module name="LemonDemoTestGx.app.LoginApp.test" target="1.8" />
       <module name="LemonDemoTestGx.app.MenuManagementApp.main" target="1.8" />
