@@ -1,22 +1,20 @@
-package com.cmpay.gx.bo;
+package com.cmpay.gx.dto;
 
 import com.cmpay.gx.entity.UserDO;
 import lombok.Data;
 
 import java.util.List;
 
-/**
- * @author GX
- */
+
 @Data
-public class UserInfoBO {
+public class UserDTO {
 
     /**
-     * @Fields tId
+     * @Fields id
      */
     private Long id;
     /**
-     * @Fields tUsername
+     * @Fields username
      */
     private String username;
     /**
@@ -49,8 +47,6 @@ public class UserInfoBO {
     private Byte normal;
     /**
      * @Fields List<UserDO></>
-      */
+     */
     private List<UserDO> users;
-
-
 }

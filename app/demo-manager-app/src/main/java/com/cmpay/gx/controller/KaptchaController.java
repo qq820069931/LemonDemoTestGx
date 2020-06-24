@@ -5,7 +5,6 @@ import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.apache.tomcat.util.http.fileupload.ByteArrayOutputStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -28,7 +27,7 @@ public class KaptchaController {
     @Autowired
     DefaultKaptcha defaultKaptcha;
 
-    @RequestMapping("/defaultKaptcha")
+    @RequestMapping("/captcha")
     public String defaultKaptcha(HttpServletRequest request, HttpServletResponse response) throws Exception {
         byte[] captcha = null;
         ByteArrayOutputStream out = new ByteArrayOutputStream();

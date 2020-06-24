@@ -3,15 +3,15 @@
 <mapper namespace="com.cmpay.gx.dao.IUserDao" >
 
     <resultMap id="BaseResultMap" type="com.cmpay.gx.entity.UserDO" >
-        <result column="t_id" property="tId" jdbcType="BIGINT" />
-        <result column="t_username" property="tUsername" jdbcType="VARCHAR" />
-        <result column="t_name" property="tName" jdbcType="VARCHAR" />
-        <result column="t_password" property="tPassword" jdbcType="VARCHAR" />
-        <result column="t_email" property="tEmail" jdbcType="VARCHAR" />
-        <result column="t_phone" property="tPhone" jdbcType="VARCHAR" />
-        <result column="t_department" property="tDepartment" jdbcType="VARCHAR" />
-        <result column="t_post" property="tPost" jdbcType="VARCHAR" />
-        <result column="t_normal" property="tNormal" jdbcType="TINYINT" />
+        <result column="t_id" property="id" jdbcType="BIGINT" />
+        <result column="t_username" property="username" jdbcType="VARCHAR" />
+        <result column="t_name" property="name" jdbcType="VARCHAR" />
+        <result column="t_password" property="password" jdbcType="VARCHAR" />
+        <result column="t_email" property="email" jdbcType="VARCHAR" />
+        <result column="t_phone" property="phone" jdbcType="VARCHAR" />
+        <result column="t_department" property="department" jdbcType="VARCHAR" />
+        <result column="t_post" property="post" jdbcType="VARCHAR" />
+        <result column="t_normal" property="normal" jdbcType="TINYINT" />
         <result column="create_by" property="createBy" jdbcType="VARCHAR" />
         <result column="create_date" property="createDate" jdbcType="DATE" />
         <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
@@ -20,7 +20,7 @@
     </resultMap>
 
     <sql id="Base_Column_List" >
-        t_id, t_username, t_name, t_password, t_email, t_phone, t_department, t_post, t_normal,
+        t_id, t_username, t_name, t_password, t_email, t_phone, t_department, t_post, t_normal
 
     </sql>
 
@@ -29,31 +29,31 @@
     <insert id="insert" parameterType="com.cmpay.gx.entity.UserDO" >
         insert into t_users
         <trim prefix="(" suffix=")" suffixOverrides="," >
-            <if test="tId != null" >
+            <if test="id != null" >
                 t_id,
             </if>
-            <if test="tUsername != null" >
+            <if test="username != null" >
                 t_username,
             </if>
-            <if test="tName != null" >
+            <if test="name != null" >
                 t_name,
             </if>
-            <if test="tPassword != null" >
+            <if test="password != null" >
                 t_password,
             </if>
-            <if test="tEmail != null" >
+            <if test="email != null" >
                 t_email,
             </if>
-            <if test="tPhone != null" >
+            <if test="phone != null" >
                 t_phone,
             </if>
-            <if test="tDepartment != null" >
+            <if test="department != null" >
                 t_department,
             </if>
-            <if test="tPost != null" >
+            <if test="post != null" >
                 t_post,
             </if>
-            <if test="tNormal != null" >
+            <if test="normal != null" >
                 t_normal,
             </if>
             <if test="createBy != null" >
@@ -73,31 +73,31 @@
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides="," >
-            <if test="tId != null" >
+            <if test="id != null" >
                 #{tId,jdbcType=BIGINT},
             </if>
-            <if test="tUsername != null" >
+            <if test="username != null" >
                 #{tUsername,jdbcType=VARCHAR},
             </if>
-            <if test="tName != null" >
+            <if test="name != null" >
                 #{tName,jdbcType=VARCHAR},
             </if>
-            <if test="tPassword != null" >
+            <if test="password != null" >
                 #{tPassword,jdbcType=VARCHAR},
             </if>
-            <if test="tEmail != null" >
+            <if test="email != null" >
                 #{tEmail,jdbcType=VARCHAR},
             </if>
-            <if test="tPhone != null" >
+            <if test="phone != null" >
                 #{tPhone,jdbcType=VARCHAR},
             </if>
-            <if test="tDepartment != null" >
+            <if test="department != null" >
                 #{tDepartment,jdbcType=VARCHAR},
             </if>
-            <if test="tPost != null" >
+            <if test="post != null" >
                 #{tPost,jdbcType=VARCHAR},
             </if>
-            <if test="tNormal != null" >
+            <if test="normal != null" >
                 #{tNormal,jdbcType=TINYINT},
             </if>
             <if test="createBy != null" >
@@ -123,31 +123,31 @@
         <include refid="Base_Column_List" />
         from t_users
         <where >
-            <if test="tId != null" >
+            <if test="id != null" >
                 and t_id = #{tId,jdbcType=BIGINT}
             </if>
-            <if test="tUsername != null" >
+            <if test="username != null" >
                 and t_username = #{tUsername,jdbcType=VARCHAR}
             </if>
-            <if test="tName != null" >
+            <if test="name != null" >
                 and t_name = #{tName,jdbcType=VARCHAR}
             </if>
-            <if test="tPassword != null" >
+            <if test="password != null" >
                 and t_password = #{tPassword,jdbcType=VARCHAR}
             </if>
-            <if test="tEmail != null" >
+            <if test="email != null" >
                 and t_email = #{tEmail,jdbcType=VARCHAR}
             </if>
-            <if test="tPhone != null" >
+            <if test="phone != null" >
                 and t_phone = #{tPhone,jdbcType=VARCHAR}
             </if>
-            <if test="tDepartment != null" >
+            <if test="department != null" >
                 and t_department = #{tDepartment,jdbcType=VARCHAR}
             </if>
-            <if test="tPost != null" >
+            <if test="post != null" >
                 and t_post = #{tPost,jdbcType=VARCHAR}
             </if>
-            <if test="tNormal != null" >
+            <if test="normal != null" >
                 and t_normal = #{tNormal,jdbcType=TINYINT}
             </if>
             <if test="createBy != null" >

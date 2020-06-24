@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.cmpay.gx.dao.IUserDao" >
-<select id="FideUser" resultType="com.cmpay.gx.dao.IUserDao" resultMap="BaseResultMap">
+<select id="FindUser" parameterType="com.cmpay.gx.entity.UserDO" resultMap="BaseResultMap">
               select
                 <include refid="Base_Column_List" />
-               from t_users where t_username=#{tUsername} and t_password =#{tPassword}
+               from t_users where t_username=#{username} and t_password =#{password}
 
 </select>
+<update id="UpdateUser">
 
+
+
+</update>
 
 </mapper>

@@ -21,6 +21,12 @@ public interface IUserDao extends BaseDao<UserDO, Long> {
      * @param user
      * @return   UserDO
      */
-    UserDO FideUser(UserDO user);
+    UserDO FindUser(UserDO user);
 
+    /**
+     *
+     * @param user
+     * @return
+     */
+    int UpdateUser(UserDO user);
 }

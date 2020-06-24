@@ -3,24 +3,34 @@ package com.cmpay.gx.service;
 import com.cmpay.gx.bo.UserInfoBO;
 import com.cmpay.gx.entity.UserDO;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 /**
  * @author GX
  */
 public interface UserService {
     /**
-     * 根据ID查找
-     * @param id
-     * @return
-     */
-    UserInfoBO FindInfoByid(Long id);
-
-    /**
      *
      * @param user
      * @return   UserInfoBO
      */
-    UserDO FideUser(UserDO user);
+    UserDO FindUser(UserInfoBO user);
 
+    /**
+     *
+     * @param user
+     * @return int
+     */
+     int   insert(UserInfoBO user) ;
+
+    /**
+     *
+     * @param user
+     * @return
+     * @throws InvocationTargetException
+     * @throws IllegalAccessException
+     */
+
+    List<UserDO> Find(UserDO user) ;
 
 }

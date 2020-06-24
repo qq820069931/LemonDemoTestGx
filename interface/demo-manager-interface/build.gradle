@@ -1,7 +1,7 @@
 dependencies {
     compile("com.cmpay:cmpay-interface")
     compile("org.projectlombok:lombok")
-
+    compile project(':service:demo-service')
 }
 
 jar {

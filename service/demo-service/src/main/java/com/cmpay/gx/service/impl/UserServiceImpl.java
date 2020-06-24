@@ -5,9 +5,11 @@ import com.cmpay.gx.bo.UserInfoBO;
 import com.cmpay.gx.dao.IUserDao;
 import com.cmpay.gx.entity.UserDO;
 import com.cmpay.gx.service.UserService;
-import com.cmpay.lemon.common.utils.BeanUtils;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
+import java.time.LocalDate;
+import java.util.List;
 
 /**
  * @author gx
@@ -19,16 +21,39 @@ public class UserServiceImpl implements UserService {
     private IUserDao iUserDao;
 
 
+
+
     @Override
-    public UserInfoBO FindInfoByid(Long id) {
-        return null;
+    public UserDO FindUser(UserInfoBO userbo) {
+        UserDO userDO =new UserDO();
+        userDO.setPassword(userbo.getPassword());
+        userDO.setUsername(userbo.getUsername());
+
+      return iUserDao.FindUser(userDO);
     }
 
     @Override
-    public UserDO FideUser(UserDO userDO) {
- //      UserDO userDO =new UserDO();
- //       BeanUtils.copyProperties(userDO, userInfoBO);
-//        BeanUtils.copyProperties (userInfoBO,iUserDao.FideUser(userDO));
-        return iUserDao.FideUser(userDO);
+    public int insert(UserInfoBO user)  {
+        UserDO userDO =new UserDO();
+        BeanUtils.copyProperties(userDO, user);
+        userDO.setNormal((byte) 1);
+        userDO.setCreateDate(LocalDate.now());
+        userDO.setCreateBy("gx");
+        userDO.setUpdateBy("gx");
+        userDO.setIsUse((byte) 1);
+        userDO.setUpdateDate(LocalDate.now());
+
+
+        return iUserDao.insert(userDO);
     }
+
+    @Override
+    public  List<UserDO> Find(UserDO user)  {
+        UserDO userDO =new UserDO();
+
+
+        return iUserDao.find(userDO);
+    }
+
+
 }

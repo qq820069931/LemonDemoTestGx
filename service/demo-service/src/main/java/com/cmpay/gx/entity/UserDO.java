@@ -9,48 +9,56 @@ package com.cmpay.gx.entity;
 import com.cmpay.gx.dao.BaseDO;
 import com.cmpay.lemon.framework.annotation.DataObject;
 import com.cmpay.lemon.framework.data.DOBasicOperation;
-
-
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
 import java.time.LocalDate;
+import java.util.List;
 
+
+@Data
 @DataObject
 public class UserDO extends BaseDO implements DOBasicOperation {
+
     /**
-     * @Fields tId 
+     * @Fields tId
      */
-    private Long tId;
+    private Long id;
     /**
-     * @Fields tUsername 
+     * @Fields tUsername
      */
-    private String tUsername;
+    private String username;
     /**
-     * @Fields tName 
+     * @Fields tName
      */
-    private String tName;
+    private String name;
     /**
-     * @Fields tPassword 
+     * @Fields tPassword
      */
-    private String tPassword;
+    private String password;
     /**
-     * @Fields tEmail 
+     * @Fields tEmail
      */
-    private String tEmail;
+    private String email;
     /**
-     * @Fields tPhone 
+     * @Fields tPhone
      */
-    private String tPhone;
+    private String phone;
     /**
-     * @Fields tDepartment 
+     * @Fields tDepartment
      */
-    private String tDepartment;
+    private String department;
     /**
-     * @Fields tPost 
+     * @Fields tPost
      */
-    private String tPost;
+    private String post;
     /**
-     * @Fields tNormal 
+     * @Fields tNormal
      */
-    private Byte tNormal;
+    private Byte normal;
+    /**
+     * @Fields List<UserDO></>
+     */
+    private List<UserDO> users;
     /**
      * @Fields createBy 
      */
@@ -58,6 +66,7 @@ public class UserDO extends BaseDO implements DOBasicOperation {
     /**
      * @Fields createDate 
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDate createDate;
     /**
      * @Fields updateBy 
@@ -66,121 +75,12 @@ public class UserDO extends BaseDO implements DOBasicOperation {
     /**
      * @Fields updateDate 
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDate updateDate;
     /**
      * @Fields isUse 
      */
     private Byte isUse;
 
-    public Long gettId() {
-        return tId;
-    }
 
-    public void settId(Long tId) {
-        this.tId = tId;
-    }
-
-    public String gettUsername() {
-        return tUsername;
-    }
-
-    public void settUsername(String tUsername) {
-        this.tUsername = tUsername;
-    }
-
-    public String gettName() {
-        return tName;
-    }
-
-    public void settName(String tName) {
-        this.tName = tName;
-    }
-
-    public String gettPassword() {
-        return tPassword;
-    }
-
-    public void settPassword(String tPassword) {
-        this.tPassword = tPassword;
-    }
-
-    public String gettEmail() {
-        return tEmail;
-    }
-
-    public void settEmail(String tEmail) {
-        this.tEmail = tEmail;
-    }
-
-    public String gettPhone() {
-        return tPhone;
-    }
-
-    public void settPhone(String tPhone) {
-        this.tPhone = tPhone;
-    }
-
-    public String gettDepartment() {
-        return tDepartment;
-    }
-
-    public void settDepartment(String tDepartment) {
-        this.tDepartment = tDepartment;
-    }
-
-    public String gettPost() {
-        return tPost;
-    }
-
-    public void settPost(String tPost) {
-        this.tPost = tPost;
-    }
-
-    public Byte gettNormal() {
-        return tNormal;
-    }
-
-    public void settNormal(Byte tNormal) {
-        this.tNormal = tNormal;
-    }
-
-    public String getCreateBy() {
-        return createBy;
-    }
-
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
-    }
-
-    public LocalDate getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(LocalDate createDate) {
-        this.createDate = createDate;
-    }
-
-    public String getUpdateBy() {
-        return updateBy;
-    }
-
-    public void setUpdateBy(String updateBy) {
-        this.updateBy = updateBy;
-    }
-
-    public LocalDate getUpdateDate() {
-        return updateDate;
-    }
-
-    public void setUpdateDate(LocalDate updateDate) {
-        this.updateDate = updateDate;
-    }
-
-    public Byte getIsUse() {
-        return isUse;
-    }
-
-    public void setIsUse(Byte isUse) {
-        this.isUse = isUse;
-    }
 }

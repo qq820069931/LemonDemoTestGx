@@ -172,4 +172,4 @@ bui:
     httpHeaders: Origin, X-Requested-With, Content-Type, Accept, token, upmsSessionId, Content-Disposition
 mybatis:
   mapper-locations:
-    - classpath:com/cmpay/zwb/mapper/*.xml
+    - classpath:mapper/*.xml

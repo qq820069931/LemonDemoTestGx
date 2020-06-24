@@ -3,30 +3,33 @@
 <mapper namespace="com.cmpay.gx.dao.IRoleDao" >
 
     <resultMap id="BaseResultMap" type="com.cmpay.gx.entity.RoleDO" >
-        <result column="t_id" property="tId" jdbcType="BIGINT" />
-        <result column="t_name" property="tName" jdbcType="VARCHAR" />
-        <result column="t_remarks" property="tRemarks" jdbcType="VARCHAR" />
-        <result column="t_action" property="tAction" jdbcType="VARCHAR" />
+        <result column="t_id" property="id" jdbcType="BIGINT" />
+        <result column="t_name" property="name" jdbcType="VARCHAR" />
+        <result column="t_remarks" property="remarks" jdbcType="VARCHAR" />
+        <result column="t_action" property="action" jdbcType="VARCHAR" />
         <result column="create_by" property="createBy" jdbcType="VARCHAR" />
         <result column="create_date" property="createDate" jdbcType="DATE" />
         <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
         <result column="update_date" property="updateDate" jdbcType="DATE" />
         <result column="is_use" property="isUse" jdbcType="TINYINT" />
     </resultMap>
+    <sql id="Base_Column_List" >
+        t_id, t_username, t_name, t_password, t_email, t_phone, t_department, t_post, t_normal,
 
+    </sql>
     <insert id="insert" parameterType="com.cmpay.gx.entity.RoleDO" >
         insert into t_role
         <trim prefix="(" suffix=")" suffixOverrides="," >
-            <if test="tId != null" >
+            <if test="id != null" >
                 t_id,
             </if>
-            <if test="tName != null" >
+            <if test="name != null" >
                 t_name,
             </if>
-            <if test="tRemarks != null" >
+            <if test="remarks != null" >
                 t_remarks,
             </if>
-            <if test="tAction != null" >
+            <if test="action != null" >
                 t_action,
             </if>
             <if test="createBy != null" >
@@ -46,16 +49,16 @@
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides="," >
-            <if test="tId != null" >
+            <if test="id != null" >
                 #{tId,jdbcType=BIGINT},
             </if>
-            <if test="tName != null" >
+            <if test="name != null" >
                 #{tName,jdbcType=VARCHAR},
             </if>
-            <if test="tRemarks != null" >
+            <if test="remarks != null" >
                 #{tRemarks,jdbcType=VARCHAR},
             </if>
-            <if test="tAction != null" >
+            <if test="action != null" >
                 #{tAction,jdbcType=VARCHAR},
             </if>
             <if test="createBy != null" >
@@ -81,16 +84,16 @@
         <include refid="Base_Column_List" />
         from t_role
         <where >
-            <if test="tId != null" >
+            <if test="id != null" >
                 and t_id = #{tId,jdbcType=BIGINT}
             </if>
-            <if test="tName != null" >
+            <if test="name != null" >
                 and t_name = #{tName,jdbcType=VARCHAR}
             </if>
-            <if test="tRemarks != null" >
+            <if test="remarks != null" >
                 and t_remarks = #{tRemarks,jdbcType=VARCHAR}
             </if>
-            <if test="tAction != null" >
+            <if test="action != null" >
                 and t_action = #{tAction,jdbcType=VARCHAR}
             </if>
             <if test="createBy != null" >

@@ -3,26 +3,29 @@
 <mapper namespace="com.cmpay.gx.dao.IJurisdictionDao" >
 
     <resultMap id="BaseResultMap" type="com.cmpay.gx.entity.JurisdictionDO" >
-        <result column="t_id" property="tId" jdbcType="BIGINT" />
-        <result column="t_action" property="tAction" jdbcType="VARCHAR" />
-        <result column="t_type" property="tType" jdbcType="TINYINT" />
+        <result column="t_id" property="id" jdbcType="BIGINT" />
+        <result column="t_action" property="action" jdbcType="VARCHAR" />
+        <result column="t_type" property="type" jdbcType="TINYINT" />
         <result column="create_by" property="createBy" jdbcType="VARCHAR" />
         <result column="create_date" property="createDate" jdbcType="DATE" />
         <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
         <result column="update_date" property="updateDate" jdbcType="DATE" />
         <result column="is_use" property="isUse" jdbcType="TINYINT" />
     </resultMap>
+    <sql id="Base_Column_List" >
 
+
+    </sql>
     <insert id="insert" parameterType="com.cmpay.gx.entity.JurisdictionDO" >
         insert into t_jurisdiction
         <trim prefix="(" suffix=")" suffixOverrides="," >
-            <if test="tId != null" >
+            <if test="id != null" >
                 t_id,
             </if>
-            <if test="tAction != null" >
+            <if test="action != null" >
                 t_action,
             </if>
-            <if test="tType != null" >
+            <if test="type != null" >
                 t_type,
             </if>
             <if test="createBy != null" >
@@ -45,10 +48,10 @@
             <if test="tId != null" >
                 #{tId,jdbcType=BIGINT},
             </if>
-            <if test="tAction != null" >
+            <if test="action != null" >
                 #{tAction,jdbcType=VARCHAR},
             </if>
-            <if test="tType != null" >
+            <if test="type != null" >
                 #{tType,jdbcType=TINYINT},
             </if>
             <if test="createBy != null" >
@@ -74,13 +77,13 @@
         <include refid="Base_Column_List" />
         from t_jurisdiction
         <where >
-            <if test="tId != null" >
+            <if test="id != null" >
                 and t_id = #{tId,jdbcType=BIGINT}
             </if>
-            <if test="tAction != null" >
+            <if test="action != null" >
                 and t_action = #{tAction,jdbcType=VARCHAR}
             </if>
-            <if test="tType != null" >
+            <if test="type != null" >
                 and t_type = #{tType,jdbcType=TINYINT}
             </if>
             <if test="createBy != null" >

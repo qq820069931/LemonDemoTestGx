@@ -9,23 +9,25 @@ package com.cmpay.gx.entity;
 import com.cmpay.gx.dao.BaseDO;
 import com.cmpay.lemon.framework.annotation.DataObject;
 import com.cmpay.lemon.framework.data.DOBasicOperation;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.Data;
 
 import java.time.LocalDate;
-
+@Data
 @DataObject
 public class JurisdictionDO extends BaseDO implements DOBasicOperation {
     /**
      * @Fields tId 
      */
-    private Long tId;
+    private Long id;
     /**
      * @Fields tAction 
      */
-    private String tAction;
+    private String action;
     /**
      * @Fields tType 
      */
-    private Byte tType;
+    private Byte type;
     /**
      * @Fields createBy 
      */
@@ -33,6 +35,7 @@ public class JurisdictionDO extends BaseDO implements DOBasicOperation {
     /**
      * @Fields createDate 
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDate createDate;
     /**
      * @Fields updateBy 
@@ -41,73 +44,10 @@ public class JurisdictionDO extends BaseDO implements DOBasicOperation {
     /**
      * @Fields updateDate 
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDate updateDate;
     /**
      * @Fields isUse 
      */
     private Byte isUse;
-
-    public Long gettId() {
-        return tId;
-    }
-
-    public void settId(Long tId) {
-        this.tId = tId;
-    }
-
-    public String gettAction() {
-        return tAction;
-    }
-
-    public void settAction(String tAction) {
-        this.tAction = tAction;
-    }
-
-    public Byte gettType() {
-        return tType;
-    }
-
-    public void settType(Byte tType) {
-        this.tType = tType;
-    }
-
-    public String getCreateBy() {
-        return createBy;
-    }
-
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
-    }
-
-    public LocalDate getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(LocalDate createDate) {
-        this.createDate = createDate;
-    }
-
-    public String getUpdateBy() {
-        return updateBy;
-    }
-
-    public void setUpdateBy(String updateBy) {
-        this.updateBy = updateBy;
-    }
-
-    public LocalDate getUpdateDate() {
-        return updateDate;
-    }
-
-    public void setUpdateDate(LocalDate updateDate) {
-        this.updateDate = updateDate;
-    }
-
-    public Byte getIsUse() {
-        return isUse;
-    }
-
-    public void setIsUse(Byte isUse) {
-        this.isUse = isUse;
-    }
 }
