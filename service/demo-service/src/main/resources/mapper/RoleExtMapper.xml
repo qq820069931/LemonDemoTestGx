@@ -37,21 +37,9 @@
 
     <delete id="deleRole">
 
-
+delete from t_role where t_id =#{Rid}
 
     </delete>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </mapper>
