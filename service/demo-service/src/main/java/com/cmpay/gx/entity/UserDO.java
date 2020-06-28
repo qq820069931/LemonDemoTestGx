@@ -20,11 +20,11 @@ import java.util.List;
 public class UserDO extends BaseDO implements DOBasicOperation {
 
     /**
-     * @Fields tId
+     * @Fields Id
      */
     private Long id;
     /**
-     * @Fields tUsername
+     * @Fields Username
      */
     private String username;
     /**

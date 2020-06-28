@@ -51,6 +51,9 @@ public class UserInfoBO {
      * @Fields List<UserDO></>
       */
     private List<UserDO> users;
-
+    /**
+     *
+     */
+    private int[] roles;
 
 }

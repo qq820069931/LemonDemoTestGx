@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.cmpay.gx.dao.IMenuDao" >
+<mapper namespace="com.cmpay.gx.dao.IUser_RoDao" >
 
-    <resultMap id="BaseResultMap" type="com.cmpay.gx.entity.MenuDO" >
+    <resultMap id="BaseResultMap" type="com.cmpay.gx.entity.User_Role" >
         <result column="id" property="id" jdbcType="BIGINT" />
-        <result column="u_id" property="uId" jdbcType="BIGINT" />
-        <result column="r_id" property="rId" jdbcType="BIGINT" />
+        <result column="u_id" property="userId" jdbcType="BIGINT" />
+        <result column="r_id" property="roleId" jdbcType="BIGINT" />
         <result column="create_by" property="createBy" jdbcType="VARCHAR" />
         <result column="create_date" property="createDate" jdbcType="DATE" />
         <result column="update_by" property="updateBy" jdbcType="VARCHAR" />
@@ -13,7 +13,12 @@
         <result column="is_use" property="isUse" jdbcType="TINYINT" />
     </resultMap>
 
-    <insert id="insert" parameterType="com.cmpay.gx.entity.MenuDO" >
+    <sql id="Base_Column_List" >
+        id, u_id, r_id, create_by, create_date, update_by, update_date, is_use
+
+    </sql>
+
+    <insert id="insert" parameterType="com.cmpay.gx.entity.User_Role" >
         insert into t_user_role
         <trim prefix="(" suffix=")" suffixOverrides="," >
             <if test="id != null" >
@@ -69,7 +74,7 @@
         </trim>
     </insert>
 
-    <select id="find" resultMap="BaseResultMap" parameterType="com.cmpay.gx.entity.MenuDO" >
+    <select id="find" resultMap="BaseResultMap" parameterType="com.cmpay.gx.entity.User_Role" >
         select 
         <include refid="Base_Column_List" />
         from t_user_role

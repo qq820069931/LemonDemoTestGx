@@ -15,4 +15,17 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface IRoleDao extends BaseDao<RoleDO, RoleDOKey> {
+    /**
+     *
+     * @param RoleDO
+     * @return
+     */
+  int  UpdateRole(RoleDO RoleDO);
+
+    /**
+     *
+     * @param Rid
+     * @return
+     */
+  int deleRole(int Rid);
 }

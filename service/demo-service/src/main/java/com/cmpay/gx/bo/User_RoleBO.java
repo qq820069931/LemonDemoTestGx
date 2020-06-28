@@ -1,21 +1,14 @@
-/*
- * @ClassName MenuDO
- * @Description 
- * @version 1.0
- * @Date 2020-06-28 14:20:00
- */
-package com.cmpay.gx.entity;
+package com.cmpay.gx.bo;
 
-
-import com.cmpay.gx.dao.BaseDO;
-import com.cmpay.lemon.framework.annotation.DataObject;
-import com.cmpay.lemon.framework.data.DOBasicOperation;
+import com.cmpay.gx.entity.User_Role;
 import lombok.Data;
 
 import java.time.LocalDate;
+import java.util.List;
+
 @Data
-@DataObject
-public class MenuDO extends BaseDO implements DOBasicOperation {
+public class User_RoleBO {
+
     /**
      * @Fields id
      */
@@ -23,11 +16,11 @@ public class MenuDO extends BaseDO implements DOBasicOperation {
     /**
      * @Fields uId
      */
-    private Long uId;
+    private Long userId;
     /**
      * @Fields rId
      */
-    private Long rId;
+    private Long roleId;
     /**
      * @Fields createBy
      */
@@ -49,5 +42,6 @@ public class MenuDO extends BaseDO implements DOBasicOperation {
      */
     private Byte isUse;
 
+    List<User_Role> listRole;
 
 }

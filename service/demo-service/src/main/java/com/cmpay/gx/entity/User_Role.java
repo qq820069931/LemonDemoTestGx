@@ -1,8 +1,8 @@
 /*
- * @ClassName MenuDO
+ * @ClassName User_Role
  * @Description 
  * @version 1.0
- * @Date 2020-06-28 14:20:00
+ * @Date 2020-06-28 14:23:33
  */
 package com.cmpay.gx.entity;
 
@@ -15,39 +15,38 @@ import lombok.Data;
 import java.time.LocalDate;
 @Data
 @DataObject
-public class MenuDO extends BaseDO implements DOBasicOperation {
+public class User_Role extends BaseDO implements DOBasicOperation {
     /**
-     * @Fields id
+     * @Fields id 
      */
     private Long id;
     /**
-     * @Fields uId
+     * @Fields uId 
      */
-    private Long uId;
+    private Long userId;
     /**
-     * @Fields rId
+     * @Fields rId 
      */
-    private Long rId;
+    private Long roleId;
     /**
-     * @Fields createBy
+     * @Fields createBy 
      */
     private String createBy;
     /**
-     * @Fields createDate
+     * @Fields createDate 
      */
     private LocalDate createDate;
     /**
-     * @Fields updateBy
+     * @Fields updateBy 
      */
     private String updateBy;
     /**
-     * @Fields updateDate
+     * @Fields updateDate 
      */
     private LocalDate updateDate;
     /**
-     * @Fields isUse
+     * @Fields isUse 
      */
     private Byte isUse;
-
 
 }

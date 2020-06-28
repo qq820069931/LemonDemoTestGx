@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cmpay.gx.dao.IRoleDao" >
+
+
+    <update id="UpdateRole">
+        UPDATE t_role set
+        <where >
+            <if test="name != null" >
+                t_name,
+            </if>
+            <if test="remarks != null" >
+                t_remarks,
+            </if>
+            <if test="action != null" >
+                t_action,
+            </if>
+            <if test="createBy != null" >
+                create_by,
+            </if>
+            <if test="createDate != null" >
+                create_date,
+            </if>
+            <if test="updateBy != null" >
+                update_by,
+            </if>
+            <if test="updateDate != null" >
+                update_date,
+            </if>
+            <if test="isUse != null" >
+                is_use,
+            </if>
+        </where>
+
+        where t_id=#{id}
+    </update>
+
+    <delete id="deleRole">
+
+
+
+    </delete>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

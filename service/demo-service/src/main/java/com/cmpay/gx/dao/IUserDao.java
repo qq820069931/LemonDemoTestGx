@@ -29,4 +29,7 @@ public interface IUserDao extends BaseDao<UserDO, Long> {
      * @return
      */
     int UpdateUser(UserDO user);
+
+
+
 }

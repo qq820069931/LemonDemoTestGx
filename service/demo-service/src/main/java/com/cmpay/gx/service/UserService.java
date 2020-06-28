@@ -33,4 +33,12 @@ public interface UserService {
 
     List<UserDO> Find(UserDO user) ;
 
+    /**
+     *
+     * @param user
+     * @return
+     */
+
+    int UpdateUser(UserDO user);
+
 }
