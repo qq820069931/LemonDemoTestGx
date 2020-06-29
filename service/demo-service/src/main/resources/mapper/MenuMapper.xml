@@ -13,6 +13,12 @@
         <result column="is_use" property="isUse" jdbcType="TINYINT" />
     </resultMap>
 
+    <sql id="Base_Column_List" >
+        t_id, t_username, t_name, t_password, t_email, t_phone, t_department, t_post, t_normal
+
+    </sql>
+
+
     <insert id="insert" parameterType="com.cmpay.gx.entity.MenuDO" >
         insert into t_user_role
         <trim prefix="(" suffix=")" suffixOverrides="," >

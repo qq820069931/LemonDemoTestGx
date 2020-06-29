@@ -14,6 +14,7 @@ import javax.annotation.Resource;
 public class RoleServiceImpl implements RoleService {
     @Resource
     private IRoleDao roleDao;
+
     @Override
     public int UpdateRole(RoleDO RoleDO) {
         return roleDao.UpdateRole(RoleDO);

@@ -2,6 +2,8 @@ package com.cmpay.gx.Login;
 
 import com.cmpay.gx.bo.UserInfoBO;
 import com.cmpay.gx.entity.UserDO;
+
+
 import com.cmpay.gx.msgEnum.MsgEnum;
 import com.cmpay.gx.service.UserService;
 import com.cmpay.lemon.common.exception.LemonException;
@@ -39,7 +41,12 @@ public class LoginAuthenticationProcessor  extends AbstractGenericMatchableAuthe
     protected UserInfoBase doProcessAuthentication(GenericAuthenticationToken genericAuthenticationToken)  {
         HttpServletRequest request = genericAuthenticationToken.getAuthenticationRequest().getHttpServletRequest();
         UserInfoBO userInfoBO = bindLoginData(request);
+
+
+
         UserDO login = userService.FindUser(userInfoBO);
+
+        System.out.println(login.toString());
         return new SimpleUserInfo(login.getId()+"", login.getUsername(),login.getPassword());
     }
 

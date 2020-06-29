@@ -56,8 +56,8 @@ logging:
   config: classpath:config/logback-spring.xml
   level:
     #org.activiti.engine.impl.persistence.entity: debug
-    com.hisun.lemon.framework.dao: ${lemon.sql.level:DEBUG}
-    com.cmpay.bui: DEBUG
+    com.hisun.lemon.framework.dao: ${lemon.sql.level:INFO}
+    com.cmpay.bui: INFO
 
 endpoints:
   shutdown:
@@ -89,7 +89,7 @@ lemon:
       principalNameExpression: username
     #认证地址
     authentication:
-      loginPathPrefix: /security/login             #默认 /security/login
+      loginPathPrefix: /v1/ui-template/security/login             #默认 /security/login
       refreshPath: /v1/bui/refresh                #默认 /security/refresh
       logoutPath: /v1/bui/logout                  #默认 /security/logout
     authorizeRequests:
