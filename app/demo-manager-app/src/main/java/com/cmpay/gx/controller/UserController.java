@@ -9,8 +9,12 @@ import com.cmpay.gx.entity.UserDO;
 import com.cmpay.gx.msgEnum.MsgEnum;
 import com.cmpay.gx.service.UserService;
 import com.cmpay.lemon.framework.annotation.QueryBody;
+import com.cmpay.lemon.framework.security.SecurityUtils;
+import com.cmpay.lemon.framework.security.UserInfoBase;
 import com.cmpay.lemon.framework.utils.PageUtils;
+import com.mysql.cj.protocol.Security;
 import org.springframework.beans.BeanUtils;
+import org.springframework.boot.actuate.autoconfigure.ManagementServerProperties;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -41,6 +45,9 @@ public class UserController  {
     public GenericRspDTO<UserRspDTO> UserLogin(@QueryBody UserDTO UserDTO)  {
         UserRspDTO userRspDTO=new UserRspDTO();
         UserInfoBO userInfoBO =new UserInfoBO();
+        UserInfoBase login= SecurityUtils.getLoginUser();
+        userInfoBO.setUsername(login.getLoginName());
+        userInfoBO.setPassword(login.getMblNo());
         BeanUtils.copyProperties(userInfoBO, UserDTO);
         UserDO userdo= userService.FindUser(userInfoBO);
         BeanUtils.copyProperties(userRspDTO, userdo);
@@ -66,6 +73,15 @@ public class UserController  {
         return list;
     }
 
+    @PostMapping("/v1/ui-template/user/list")
+    public List<UserDO>  FindAll(){
+        UserDO UserDO=new UserDO();
+        List<UserDO> list=new ArrayList<>();
+        list= userService.Find(UserDO);
+
+        return list;
+
+    }
 
 
 }
