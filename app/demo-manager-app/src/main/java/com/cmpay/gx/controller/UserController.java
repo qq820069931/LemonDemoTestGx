@@ -8,20 +8,17 @@ import com.cmpay.gx.dto.UserRspDTO;
 import com.cmpay.gx.entity.UserDO;
 import com.cmpay.gx.msgEnum.MsgEnum;
 import com.cmpay.gx.service.UserService;
+import com.cmpay.lemon.common.utils.BeanUtils;
 import com.cmpay.lemon.framework.annotation.QueryBody;
 import com.cmpay.lemon.framework.security.SecurityUtils;
 import com.cmpay.lemon.framework.security.UserInfoBase;
-import com.cmpay.lemon.framework.utils.PageUtils;
-import com.mysql.cj.protocol.Security;
-import org.springframework.beans.BeanUtils;
-import org.springframework.boot.actuate.autoconfigure.ManagementServerProperties;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.github.pagehelper.PageInfo;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @author GX
@@ -33,12 +30,14 @@ public class UserController  {
 
 
 
-    @PostMapping("/user/insert")
-    public void InsertUser( @QueryBody UserDTO UserDTO)  {
-        UserInfoBO userInfoBO =new UserInfoBO();
-        BeanUtils.copyProperties(userInfoBO, UserDTO);
+    @PostMapping("/v1/ui-template/user/save")
+    public GenericRspDTO<UserRspDTO> InsertUser( @RequestBody UserInfoBO userInfoBO)  {
+        long unboundedLong = new Random().nextLong();
+        userInfoBO.setId(unboundedLong);
+        System.out.println(userInfoBO);
         userService.insert(userInfoBO);
-
+        UserRspDTO userRspDTO=new UserRspDTO();
+        return GenericRspDTO.newInstance(MsgEnum.SUCCESS,userRspDTO);
     }
 
     @GetMapping("/v1/ui-template/user/info")
@@ -57,8 +56,9 @@ public class UserController  {
 
 
     @PostMapping("/user/Find")
-    public List<UserDO> UserFind(int pageNum,int pagesize, UserDTO UserDTO)  {
+    public PageInfo<UserDO> UserFind(int pageNum, int pagesize, UserDTO UserDTO)  {
         List<UserDO> list=new ArrayList<>();
+        PageInfo<UserDO> pageInfo=null;
         UserDO UserDO=new UserDO();
         BeanUtils.copyProperties(UserDO, UserDTO);
         if(pageNum==0||pagesize==0){
@@ -66,22 +66,44 @@ public class UserController  {
             BeanUtils.copyProperties(UserDTO, UserDO);
         }
         else {
-            list=  PageUtils.pageQuery(pageNum,pagesize,() -> { return this.userService.Find(UserDO); });
-
+            //pageInfo=  PageUtils.pageQuery(pageNum,pagesize,() -> { return this.userService.Find(UserDO); });
+          //  PageUtils.pageQueryWithCount(pageNum,pagesize,()->BeanC)
         }
-
-        return list;
+        return pageInfo;
     }
 
     @PostMapping("/v1/ui-template/user/list")
-    public List<UserDO>  FindAll(){
+    public GenericRspDTO<List<UserDO>>  FindAll(){
         UserDO UserDO=new UserDO();
-        List<UserDO> list=new ArrayList<>();
+        List<UserDO> list=null;
         list= userService.Find(UserDO);
-
-        return list;
-
+        System.out.println(list.toString());
+        return GenericRspDTO.newInstance(MsgEnum.SUCCESS,list);
     }
 
+
+
+
+    @GetMapping("/v1/ui-template/user/info/{id}")
+    public GenericRspDTO<UserDO> UserLogin(@PathVariable Long id)  {
+        UserDO UserDO=new UserDO();
+        UserDO.setId(id);
+        List<UserDO> list= new ArrayList<>();
+
+        list=userService.Find(UserDO);
+        UserDO=list.get(0);
+        return GenericRspDTO.newInstance(MsgEnum.SUCCESS,UserDO);
+    }
+
+    @PostMapping("/v1/ui-template/user/update")
+    public GenericRspDTO<UserDO> UpdataUser(@RequestBody UserInfoBO userInfoBO)
+    {
+
+        UserDO UserDO=new UserDO();
+        BeanUtils.copyProperties(UserDO, userInfoBO);
+        System.out.println(userInfoBO);
+        userService.UpdateUser(UserDO);
+        return GenericRspDTO.newInstance(MsgEnum.SUCCESS,UserDO);
+    }
 
 }

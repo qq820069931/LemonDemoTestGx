@@ -9,10 +9,8 @@ package com.cmpay.gx.entity;
 import com.cmpay.gx.dao.BaseDO;
 import com.cmpay.lemon.framework.annotation.DataObject;
 import com.cmpay.lemon.framework.data.DOBasicOperation;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import java.time.LocalDate;
-import java.util.List;
 
 
 @Data
@@ -20,45 +18,42 @@ import java.util.List;
 public class UserDO extends BaseDO implements DOBasicOperation {
 
     /**
-     * @Fields Id
+     * @Fields id
      */
     private Long id;
     /**
-     * @Fields Username
+     * @Fields username
      */
     private String username;
     /**
-     * @Fields tName
+     * @Fields name
      */
     private String name;
     /**
-     * @Fields tPassword
+     * @Fields password
      */
     private String password;
     /**
-     * @Fields tEmail
+     * @Fields email
      */
     private String email;
     /**
-     * @Fields tPhone
+     * @Fields phone
      */
     private String phone;
     /**
-     * @Fields tDepartment
+     * @Fields department
      */
     private String department;
     /**
-     * @Fields tPost
+     * @Fields post
      */
     private String post;
     /**
-     * @Fields tNormal
+     * @Fields normal
      */
     private Byte normal;
-    /**
-     * @Fields List<UserDO></>
-     */
-    private List<UserDO> users;
+
     /**
      * @Fields createBy 
      */
@@ -66,7 +61,7 @@ public class UserDO extends BaseDO implements DOBasicOperation {
     /**
      * @Fields createDate 
      */
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+
     private LocalDate createDate;
     /**
      * @Fields updateBy 
@@ -75,7 +70,7 @@ public class UserDO extends BaseDO implements DOBasicOperation {
     /**
      * @Fields updateDate 
      */
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+
     private LocalDate updateDate;
     /**
      * @Fields isUse 

@@ -8,28 +8,29 @@
 
 </select>
 <update id="UpdateUser">
-UPDATE t_users set
-    <where >
+UPDATE t_users
+<set>
+
         <if test="name != null" >
-             t_name = #{tName,jdbcType=VARCHAR},
+             t_name = #{name,jdbcType=VARCHAR},
         </if>
         <if test="password != null" >
-             t_password = #{tPassword,jdbcType=VARCHAR},
+             t_password = #{password,jdbcType=VARCHAR},
         </if>
         <if test="email != null" >
-             t_email = #{tEmail,jdbcType=VARCHAR},
+             t_email = #{email,jdbcType=VARCHAR},
         </if>
         <if test="phone != null" >
-             t_phone = #{tPhone,jdbcType=VARCHAR},
+             t_phone = #{phone,jdbcType=VARCHAR},
         </if>
         <if test="department != null" >
-             t_department = #{tDepartment,jdbcType=VARCHAR},
+             t_department = #{department,jdbcType=VARCHAR},
         </if>
         <if test="post != null" >
-             t_post = #{tPost,jdbcType=VARCHAR},
+             t_post = #{post,jdbcType=VARCHAR},
         </if>
         <if test="normal != null" >
-             t_normal = #{tNormal,jdbcType=TINYINT},
+             t_normal = #{normal,jdbcType=TINYINT},
         </if>
         <if test="createBy != null" >
              create_by = #{createBy,jdbcType=VARCHAR},
@@ -44,16 +45,12 @@ UPDATE t_users set
              update_date = #{updateDate,jdbcType=DATE},
         </if>
         <if test="isUse != null" >
-             is_use = #{isUse,jdbcType=TINYINT},
+             is_use = #{isUse,jdbcType=TINYINT}
         </if>
-    </where>
 
- where t_id=#{id}
+
+</set>
+ where t_username=#{username}
 </update>
-
-
-
-
-
 
 </mapper>

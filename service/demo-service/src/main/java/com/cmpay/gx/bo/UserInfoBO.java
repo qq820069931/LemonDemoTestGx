@@ -1,5 +1,6 @@
 package com.cmpay.gx.bo;
 
+import com.cmpay.framework.data.response.GenericRspDTO;
 import com.cmpay.gx.entity.UserDO;
 import lombok.Data;
 
@@ -9,7 +10,7 @@ import java.util.List;
  * @author GX
  */
 @Data
-public class UserInfoBO {
+public class UserInfoBO  {
 
     /**
      * @Fields tId

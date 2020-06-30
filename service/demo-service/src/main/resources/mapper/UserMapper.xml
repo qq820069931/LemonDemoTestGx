@@ -20,7 +20,7 @@
     </resultMap>
 
     <sql id="Base_Column_List" >
-        t_id, t_username, t_name, t_password, t_email, t_phone, t_department, t_post, t_normal
+        t_id, t_username, t_name, t_password, t_email, t_phone, t_department, t_post, t_normal,create_date
 
     </sql>
 
@@ -74,31 +74,31 @@
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides="," >
             <if test="id != null" >
-                #{tId,jdbcType=BIGINT},
+                #{id,jdbcType=BIGINT},
             </if>
             <if test="username != null" >
-                #{tUsername,jdbcType=VARCHAR},
+                #{username,jdbcType=VARCHAR},
             </if>
             <if test="name != null" >
-                #{tName,jdbcType=VARCHAR},
+                #{name,jdbcType=VARCHAR},
             </if>
             <if test="password != null" >
-                #{tPassword,jdbcType=VARCHAR},
+                #{password,jdbcType=VARCHAR},
             </if>
             <if test="email != null" >
-                #{tEmail,jdbcType=VARCHAR},
+                #{email,jdbcType=VARCHAR},
             </if>
             <if test="phone != null" >
-                #{tPhone,jdbcType=VARCHAR},
+                #{phone,jdbcType=VARCHAR},
             </if>
             <if test="department != null" >
-                #{tDepartment,jdbcType=VARCHAR},
+                #{department,jdbcType=VARCHAR},
             </if>
             <if test="post != null" >
-                #{tPost,jdbcType=VARCHAR},
+                #{post,jdbcType=VARCHAR},
             </if>
             <if test="normal != null" >
-                #{tNormal,jdbcType=TINYINT},
+                #{normal,jdbcType=TINYINT},
             </if>
             <if test="createBy != null" >
                 #{createBy,jdbcType=VARCHAR},
@@ -124,31 +124,31 @@
         from t_users
         <where >
             <if test="id != null" >
-                and t_id = #{tId,jdbcType=BIGINT}
+                and t_id = #{id,jdbcType=BIGINT}
             </if>
             <if test="username != null" >
-                and t_username = #{tUsername,jdbcType=VARCHAR}
+                and t_username = #{username,jdbcType=VARCHAR}
             </if>
             <if test="name != null" >
-                and t_name = #{tName,jdbcType=VARCHAR}
+                and t_name = #{name,jdbcType=VARCHAR}
             </if>
             <if test="password != null" >
-                and t_password = #{tPassword,jdbcType=VARCHAR}
+                and t_password = #{password,jdbcType=VARCHAR}
             </if>
             <if test="email != null" >
-                and t_email = #{tEmail,jdbcType=VARCHAR}
+                and t_email = #{email,jdbcType=VARCHAR}
             </if>
             <if test="phone != null" >
-                and t_phone = #{tPhone,jdbcType=VARCHAR}
+                and t_phone = #{phone,jdbcType=VARCHAR}
             </if>
             <if test="department != null" >
-                and t_department = #{tDepartment,jdbcType=VARCHAR}
+                and t_department = #{department,jdbcType=VARCHAR}
             </if>
             <if test="post != null" >
-                and t_post = #{tPost,jdbcType=VARCHAR}
+                and t_post = #{post,jdbcType=VARCHAR}
             </if>
             <if test="normal != null" >
-                and t_normal = #{tNormal,jdbcType=TINYINT}
+                and t_normal = #{normal,jdbcType=TINYINT}
             </if>
             <if test="createBy != null" >
                 and create_by = #{createBy,jdbcType=VARCHAR}

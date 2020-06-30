@@ -17,19 +17,19 @@ import java.time.LocalDate;
 @DataObject
 public class RoleDO extends BaseDO implements DOBasicOperation {
     /**
-     * @Fields tId 
+     * @Fields id
      */
     private Long id;
     /**
-     * @Fields tName 
+     * @Fields name
      */
     private String name;
     /**
-     * @Fields tRemarks 
+     * @Fields remarks
      */
     private String remarks;
     /**
-     * @Fields tAction 
+     * @Fields action
      */
     private String action;
     /**
@@ -39,7 +39,7 @@ public class RoleDO extends BaseDO implements DOBasicOperation {
     /**
      * @Fields createDate 
      */
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+
     private LocalDate createDate;
     /**
      * @Fields updateBy 
@@ -48,7 +48,7 @@ public class RoleDO extends BaseDO implements DOBasicOperation {
     /**
      * @Fields updateDate 
      */
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+
     private LocalDate updateDate;
     /**
      * @Fields isUse 

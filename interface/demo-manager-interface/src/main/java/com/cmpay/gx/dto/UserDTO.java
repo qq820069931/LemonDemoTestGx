@@ -1,13 +1,16 @@
 package com.cmpay.gx.dto;
 
+import com.cmpay.framework.data.response.GenericRspDTO;
 import com.cmpay.gx.entity.UserDO;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
 @Data
-public class UserDTO {
+public class UserDTO   {
 
     /**
      * @Fields id
@@ -18,19 +21,19 @@ public class UserDTO {
      */
     private String username;
     /**
-     * @Fields tName
+     * @Fields name
      */
     private String name;
     /**
-     * @Fields tPassword
+     * @Fields password
      */
     private String password;
     /**
-     * @Fields tEmail
+     * @Fields email
      */
     private String email;
     /**
-     * @Fields tPhone
+     * @Fields hone
      */
     private String phone;
     /**
@@ -41,6 +44,11 @@ public class UserDTO {
      * @Fields tPost
      */
     private String post;
+    /**
+     * @Fields createDate
+     */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private LocalDate createDate;
     /**
      * @Fields tNormal
      */

@@ -21,11 +21,11 @@ public class User_Role extends BaseDO implements DOBasicOperation {
      */
     private Long id;
     /**
-     * @Fields uId 
+     * @Fields id
      */
     private Long userId;
     /**
-     * @Fields rId 
+     * @Fields id
      */
     private Long roleId;
     /**

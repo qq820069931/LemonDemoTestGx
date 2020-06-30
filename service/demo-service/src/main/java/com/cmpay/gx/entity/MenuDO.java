@@ -21,13 +21,13 @@ public class MenuDO extends BaseDO implements DOBasicOperation {
      */
     private Long id;
     /**
-     * @Fields uId
+     * @Fields id
      */
     private Long uId;
     /**
-     * @Fields rId
+     * @Fields id
      */
-    private Long rId;
+    private Long rid;
     /**
      * @Fields createBy
      */
