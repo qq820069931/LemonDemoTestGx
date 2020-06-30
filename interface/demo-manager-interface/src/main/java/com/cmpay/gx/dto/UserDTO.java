@@ -1,6 +1,7 @@
 package com.cmpay.gx.dto;
 
 import com.cmpay.framework.data.response.GenericRspDTO;
+import com.cmpay.framework.data.response.PageableRspDTO;
 import com.cmpay.gx.entity.UserDO;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
@@ -10,7 +11,7 @@ import java.util.List;
 
 
 @Data
-public class UserDTO   {
+public class UserDTO extends PageableRspDTO {
 
     /**
      * @Fields id

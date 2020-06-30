@@ -12,6 +12,7 @@ import com.cmpay.lemon.common.utils.BeanUtils;
 import com.cmpay.lemon.framework.annotation.QueryBody;
 import com.cmpay.lemon.framework.security.SecurityUtils;
 import com.cmpay.lemon.framework.security.UserInfoBase;
+import com.cmpay.lemon.framework.utils.PageUtils;
 import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.*;
 
@@ -47,15 +48,14 @@ public class UserController  {
         UserInfoBase login= SecurityUtils.getLoginUser();
         userInfoBO.setUsername(login.getLoginName());
         userInfoBO.setPassword(login.getMblNo());
-        BeanUtils.copyProperties(userInfoBO, UserDTO);
+        System.out.println(userInfoBO);
         UserDO userdo= userService.FindUser(userInfoBO);
-        BeanUtils.copyProperties(userRspDTO, userdo);
         return GenericRspDTO.newInstance(MsgEnum.SUCCESS,userRspDTO);
     }
 
 
 
-    @PostMapping("/user/Find")
+    @PostMapping("")
     public PageInfo<UserDO> UserFind(int pageNum, int pagesize, UserDTO UserDTO)  {
         List<UserDO> list=new ArrayList<>();
         PageInfo<UserDO> pageInfo=null;
@@ -73,11 +73,15 @@ public class UserController  {
     }
 
     @PostMapping("/v1/ui-template/user/list")
-    public GenericRspDTO<List<UserDO>>  FindAll(){
-        UserDO UserDO=new UserDO();
-        List<UserDO> list=null;
-        list= userService.Find(UserDO);
-        System.out.println(list.toString());
+    public GenericRspDTO<List<UserDO>> FindAll(@RequestBody  UserDTO UserDTO){
+        List<UserDO> list=new ArrayList<>();
+        System.out.println(UserDTO.toString());
+        UserDO userDO=new UserDO();
+        BeanUtils.copyProperties(userDO, UserDTO);
+        if(userDO.getUsername().equals("")){
+            userDO.setUsername(null);
+        }
+        list= userService.Find(userDO);
         return GenericRspDTO.newInstance(MsgEnum.SUCCESS,list);
     }
 
